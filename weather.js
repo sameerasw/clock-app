@@ -3,7 +3,7 @@
 let weather = document.getElementById('weather');
 
 function getWeather() {
-    let url = 'https://api.openweathermap.org/data/2.5/weather?q=New York&units=metric&appid=d280b8d8145a073ea17e30d81ec7b1f3';
+    let url = 'https://api.openweathermap.org/data/2.5/weather?q=Colombo&units=metric&appid=d280b8d8145a073ea17e30d81ec7b1f3';
     fetch(url)
         .then(response => response.json())
         .then(data => {

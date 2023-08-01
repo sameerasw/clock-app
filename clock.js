@@ -2,6 +2,7 @@
 let clock = document.getElementById('clock');
 let date = document.getElementById('date');
 let greetings = document.getElementById('greetings');
+let background = document.getElementsByClassName('wrapper');
 
 function updateClock() {
     new Date().toLocaleTimeString();
@@ -17,6 +18,7 @@ function updateClock() {
     //get weekday in text
     let weekday = today.toLocaleString('default', { weekday: 'long' });
     date.innerHTML = weekday + ', ' + month + ' ' + day;
+    adjustOpacity();
 }
 
 function randomColors() {
@@ -53,6 +55,23 @@ function greetingsGenerator() {
         greetingsText = 'Good night';
     }
     greetings.innerHTML = greetingsText + ', Sameera!';
+}
+
+//adjust the opacity of background div .wrapper according to the time
+function adjustOpacity() {
+    let today = new Date();
+    let hour = today.getHours();
+    let opacity = 0;
+    if (hour >= 6 && hour < 9) {
+        opacity = 0.5;
+    } else if (hour >= 9 && hour < 17) {
+        opacity = 1.0;
+    } else if (hour >= 16 && hour < 21) {
+        opacity = 0.5;
+    } else {
+        opacity = 0.2;
+    }
+    background[0].style.opacity = opacity;
 }
 
 //refresh colors page on click on clock
