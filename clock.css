@@ -22,6 +22,18 @@ body{
     font-size: 500%;
 }
 
+.center{
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #clock{
     display: flex;
     justify-content: center;
@@ -30,6 +42,21 @@ body{
     text-align: center;
     max-width: 100%;
     z-index: 100;
+}
+
+#date{
+    font-size: 20%;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+    z-index: 100;
+}
+
+#weather{
+    font-size: 20%;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+    z-index: 100;
+    text-align: center;
 }
 
 @keyframes fly {
