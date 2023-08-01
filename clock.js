@@ -40,6 +40,18 @@ refresh.addEventListener('click', function () {
 }
 );
 
+//open the form on dragging of the refresh button
+refresh.addEventListener('drag', function () {
+    let form = document.getElementById('user-input');
+    form.style.display = 'block';
+    //load current data from storage to the form
+    let city = localStorage.getItem('city');
+    let name = localStorage.getItem('name');
+    document.getElementById('city').value = city;
+    document.getElementById('name').value = name;
+}
+);
+
 //generate random greetings with time
 function greetingsGenerator() {
     //read users name from local storage
