@@ -33,15 +33,8 @@ function randomColors() {
     document.documentElement.style.setProperty('--color-tertiary', color3);
 }
 
-//refresh page on refresh click
-let refresh = document.getElementById('refresh');
-refresh.addEventListener('click', function () {
-    location.reload();
-}
-);
-
 //open the form on dragging of the refresh button
-refresh.addEventListener('drag', function () {
+refresh.addEventListener('click', function () {
     let form = document.getElementById('user-input');
     form.style.display = 'block';
     //load current data from storage to the form
