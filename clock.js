@@ -36,7 +36,7 @@ function randomColors() {
 //open the form on dragging of the refresh button
 refresh.addEventListener('click', function () {
     let form = document.getElementById('user-input');
-    form.style.display = 'block';
+    form.style.display = 'flex';
     //load current data from storage to the form
     let city = localStorage.getItem('city');
     let name = localStorage.getItem('name');

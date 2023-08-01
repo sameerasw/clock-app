@@ -8,7 +8,7 @@ let apiKey = localStorage.getItem('apiKey');
 let city = localStorage.getItem('city');
 
 if (apiKey == null || city == null) {
-    form.style.display = 'block';
+    form.style.display = 'flex';
 } else {
     form.style.display = 'none';
 }
