@@ -1,3 +1,9 @@
+:root{
+    --color-primary: #373372;
+    --color-secondary: #7C336C;
+    --color-tertiary: #B3588A;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -43,21 +49,23 @@ body{
     background: #000000;
     position: absolute;
     overflow:hidden;
-    border-radius: 40px;
+    border-radius: 75px;
     z-index: 0;
+    transition: color 2s ease-in-out;
   }
   
   .base {
     position: absolute;
     filter: blur(60px);
     opacity: 0.8;
+    transition: color 2s ease-in-out;
   }
   
   .one {
     border-radius: 100%;
     width: 600px;
     height: 600px;
-    background-color: #373372;
+    background-color: var(--color-primary);
     left:-50px;
     top:-300px;
     z-index: 3;
@@ -68,7 +76,7 @@ body{
   .two {
     width: 500px;
     height: 800px;
-    background-color: #7C336C;
+    background-color: var(--color-secondary);
     bottom:-30px;
     left:-80px;
   }
@@ -79,7 +87,25 @@ body{
     height: 450px;
     bottom:-80px;
     right:-100px;
-    background-color: #B3588A;
+    background-color: var(--color-tertiary);
     animation: flyPlus 8s linear infinite;
     transform:rotate(0) translate(100px) rotate(0);
+  }
+
+  /* refresh button */
+ #refresh{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #161616;
+    color: #000;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
   }
