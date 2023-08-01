@@ -10,9 +10,11 @@ function getWeather() {
             let temp = data.main.temp;
             let description = data.weather[0].description;
             let icon = data.weather[0].icon;
-            let iconUrl = 'http://openweathermap.org/img/w/' + icon + '.png';
-            weather.innerHTML = temp + '°C' + '<br>' + description + '<br>' + '<img src="' + iconUrl + '">';
+            let iconUrl = 'http://openweathermap.org/img/wn/' + icon + '.png';
+            weather.innerHTML = temp + '°C   ' + description + '<img src="' + iconUrl + '">';
         });
 }
 
+//update weather every 3 hours
 getWeather();
+setInterval(getWeather, 10800000);
