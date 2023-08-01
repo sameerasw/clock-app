@@ -4,6 +4,9 @@
     --color-tertiary: #B3588A;
     --color-text: #ffffff;
     --color-text-secondary: #888888;
+    --api-key: d280b8d8145a073ea17e30d81ec7b1f3;
+    --city: Colombo;
+    --name: User;
 }
 
 *{
@@ -79,6 +82,42 @@ body{
     width: 40px;
     top: 15px;
     z-index: 100;
+}
+
+#user-input{
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    display: none;
+}
+
+#user-input input{
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    outline: none;
+    background-color: #020202;
+    color: #fff;
+    text-align: center;
+}
+
+#user-input button{
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    outline: none;
+    background-color: var(--color-primary);
+    color: #000000;
+    cursor: pointer;
 }
 
 @keyframes fly {

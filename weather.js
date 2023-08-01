@@ -1,9 +1,36 @@
 //get weather from openweathermap.org with provided API key and retriew data to the weather div in html
 
 let weather = document.getElementById('weather');
+let form = document.getElementById('user-input');
+
+//read the api key and city from local storage, if not found, show the user-input form
+let apiKey = localStorage.getItem('apiKey');
+let city = localStorage.getItem('city');
+
+if (apiKey == null || city == null) {
+    form.style.display = 'block';
+    //wait for form submit to continue
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        city = document.getElementById('city').value;
+        apiKey = document.getElementById('api').value;
+        let name = document.getElementById('name').value;
+        localStorage.setItem('city', city);
+        localStorage.setItem('apiKey', apiKey);
+        localStorage.setItem('name', name);
+        //hide the form
+        form.style.display = 'none';
+        //refresh the page
+        location.reload();
+    });
+} else {
+    form.style.display = 'none';
+}
 
 function getWeather() {
-    let url = 'https://api.openweathermap.org/data/2.5/weather?q=Colombo&units=metric&appid=d280b8d8145a073ea17e30d81ec7b1f3';
+    let apiKey = localStorage.getItem('apiKey');
+    let city = localStorage.getItem('city');
+    let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + apiKey;
     fetch(url)
         .then(response => response.json())
         .then(data => {

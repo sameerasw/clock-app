@@ -42,6 +42,8 @@ refresh.addEventListener('click', function () {
 
 //generate random greetings with time
 function greetingsGenerator() {
+    //read users name from local storage
+    let username = localStorage.getItem('name');
     let today = new Date(); 
     let hour = today.getHours();
     let greetingsText = '';
@@ -54,7 +56,7 @@ function greetingsGenerator() {
     } else {
         greetingsText = 'Good night';
     }
-    greetings.innerHTML = greetingsText + ', Sameera!';
+    greetings.innerHTML = greetingsText + ', ' + username + '!';
 }
 
 //adjust the opacity of background div .wrapper according to the time
