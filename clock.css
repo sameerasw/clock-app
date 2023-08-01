@@ -21,7 +21,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-size: 750%;
+    font-size: 500%;
 }
 
 .center{
@@ -51,6 +51,7 @@ body{
     align-items: center;
     flex-direction: column;
     text-align: center;
+    font-size: 150%;
     max-width: 100%;
     z-index: 100;
 }
