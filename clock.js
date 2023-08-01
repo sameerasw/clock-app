@@ -9,3 +9,11 @@ function updateClock() {
 }
 
 setInterval(updateClock, 1000);
+
+//refresh page on long press on clock
+clock.addEventListener('mousedown', function (e) {
+    if (e.detail > 1) {
+        window.location.reload();
+    }
+}
+);

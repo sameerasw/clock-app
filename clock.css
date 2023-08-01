@@ -6,11 +6,80 @@
 
 body{
     background-color: #000;
-    color: #fff;
+    color: #ffffff;
     font-family: 'Orbitron', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-size: 1000%;
+    font-size: 500%;
 }
+
+#clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 100%;
+    z-index: 100;
+}
+
+@keyframes fly {
+    100% {
+      transform:rotate(1turn) translate(100px) rotate(-1turn);
+    }
+  }
+  
+  @keyframes flyPlus {
+    100% {
+      transform:rotate(-1turn) translate(100px) rotate(1turn);
+    }
+  }
+  
+  .wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    position: absolute;
+    overflow:hidden;
+    border-radius: 40px;
+    z-index: 0;
+  }
+  
+  .base {
+    position: absolute;
+    filter: blur(60px);
+    opacity: 0.8;
+  }
+  
+  .one {
+    border-radius: 100%;
+    width: 600px;
+    height: 600px;
+    background-color: #373372;
+    left:-50px;
+    top:-300px;
+    z-index: 3;
+    animation: fly 12s linear infinite;
+    transform:rotate(0) translate(80px) rotate(0);
+  }
+  
+  .two {
+    width: 500px;
+    height: 800px;
+    background-color: #7C336C;
+    bottom:-30px;
+    left:-80px;
+  }
+  
+  .three {
+    border-radius: 100%;
+    width: 450px;
+    height: 450px;
+    bottom:-80px;
+    right:-100px;
+    background-color: #B3588A;
+    animation: flyPlus 8s linear infinite;
+    transform:rotate(0) translate(100px) rotate(0);
+  }
