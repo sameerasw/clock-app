@@ -1,6 +1,7 @@
 //a script that will update time in the clock div realtime
 let clock = document.getElementById('clock');
 let date = document.getElementById('date');
+let greetings = document.getElementById('greetings');
 
 function updateClock() {
     new Date().toLocaleTimeString();
@@ -30,6 +31,30 @@ function randomColors() {
     document.documentElement.style.setProperty('--color-tertiary', color3);
 }
 
+//refresh page on refresh click
+let refresh = document.getElementById('refresh');
+refresh.addEventListener('click', function () {
+    location.reload();
+}
+);
+
+//generate random greetings with time
+function greetingsGenerator() {
+    let today = new Date(); 
+    let hour = today.getHours();
+    let greetingsText = '';
+    if (hour >= 5 && hour < 12) {
+        greetingsText = 'Good morning';
+    } else if (hour >= 12 && hour < 18) {
+        greetingsText = 'Good afternoon';
+    } else if (hour >= 17 && hour < 21) {
+        greetingsText = 'Good evening';
+    } else {
+        greetingsText = 'Good night';
+    }
+    greetings.innerHTML = greetingsText + ', Sameera!';
+}
+
 //refresh colors page on click on clock
 clock.addEventListener('click', function () {
     randomColors();
@@ -38,10 +63,4 @@ clock.addEventListener('click', function () {
 
 randomColors();
 setInterval(updateClock, 1000);
-
-//refresh page on refresh click
-let refresh = document.getElementById('refresh');
-refresh.addEventListener('click', function () {
-    location.reload();
-}
-);
+setInterval(greetingsGenerator, 1000);
