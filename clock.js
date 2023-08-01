@@ -70,13 +70,13 @@ function adjustOpacity() {
     let hour = today.getHours();
     let opacity = 0;
     if (hour >= 6 && hour < 9) {
-        opacity = 0.5;
+        opacity = 0.6;
     } else if (hour >= 9 && hour < 17) {
         opacity = 1.0;
     } else if (hour >= 16 && hour < 21) {
-        opacity = 0.5;
+        opacity = 0.6;
     } else {
-        opacity = 0.2;
+        opacity = 0.4;
     }
     background[0].style.opacity = opacity;
 }
