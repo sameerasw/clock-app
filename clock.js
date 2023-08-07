@@ -4,6 +4,12 @@ let date = document.getElementById('date');
 let greetings = document.getElementById('greetings');
 let background = document.getElementsByClassName('wrapper');
 
+//make the page full screen on load
+window.onload = function () {
+    document.documentElement.requestFullscreen();
+};
+
+
 function updateClock() {
     new Date().toLocaleTimeString();
     //show time in 12 hrs format with leading 0 and no am or pm
