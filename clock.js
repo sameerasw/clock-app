@@ -4,11 +4,6 @@ let date = document.getElementById('date');
 let greetings = document.getElementById('greetings');
 let background = document.getElementsByClassName('wrapper');
 
-//make the page full screen on load
-window.onload = function () {
-    document.documentElement.requestFullscreen();
-};
-
 
 function updateClock() {
     new Date().toLocaleTimeString();
@@ -96,3 +91,16 @@ clock.addEventListener('click', function () {
 randomColors();
 setInterval(updateClock, 1000);
 setInterval(greetingsGenerator, 1000);
+
+//function for toggle full screen
+function fullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+
+background[0].addEventListener('click', fullScreen);
